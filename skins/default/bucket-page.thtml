@@ -1,0 +1,148 @@
+<TMPL_INCLUDE NAME="common-top.thtml">
+<TMPL_INCLUDE NAME="common-middle.thtml">
+
+<h2 class="buckets"><TMPL_VAR NAME="Bucket_Main_Title"></h2>
+
+<table summary="">
+    <tr>
+        <th scope="row" class="bucketsLabel">
+            <TMPL_VAR NAME="Localize_SingleBucket_WordCount">
+        </th>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            <TMPL_VAR NAME="Bucket_Word_Count">
+        </td>
+        <td>
+            (<TMPL_VAR NAME="Bucket_Unique_Count">)
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="bucketsLabel">
+            <TMPL_VAR NAME="Localize_SingleBucket_TotalWordCount">
+        </th>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            <TMPL_VAR NAME="Bucket_Total_Word_Count">
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <hr />
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="bucketsLabel">
+            <TMPL_VAR NAME="Localize_SingleBucket_Percentage">
+        </th>
+        <td>
+        </td>
+        <td>
+            <TMPL_VAR NAME="Bucket_Percentage">
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+
+<form action="/buckets" method="post">
+    <input type="hidden" name="session" value="<TMPL_VAR NAME="Session_Key">" />
+    <input type="hidden" name="showbucket" value="<TMPL_VAR NAME="Bucket_Bucket">" />
+    <input type="submit" name="clearbucket" class="submit" value="<TMPL_VAR NAME="Localize_SingleBucket_ClearBucket">" />
+</form>
+
+<TMPL_IF NAME="Bucket_If_Has_Words">
+
+<p>
+    <TMPL_VAR NAME="Localize_SingleBucket_Message1">
+</p>
+<table summary="<TMPL_VAR NAME="Localize_Bucket_WordListTableSummary">">
+    <tr>
+        <td colspan="2">
+
+            <TMPL_LOOP NAME="Bucket_Loop_Letters">
+
+            <TMPL_IF NAME="Bucket_If_Show_Letter">
+
+            <b>
+                <span class="bucketLetterSelected">
+                   - <TMPL_VAR NAME="Bucket_Letter"> -
+                </span>
+            </b>
+
+            <TMPL_ELSE>
+
+            <a class="bucketLetter" href="/buckets?session=<TMPL_VAR NAME="Session_Key">&amp;showbucket=<TMPL_VAR NAME="Bucket_Bucket">&amp;showletter=<TMPL_VAR NAME="Bucket_Letter" ESCAPE=URL>">
+                <b>
+                   <TMPL_VAR NAME="Bucket_Letter" ESCAPE=HTML>
+                </b>
+            </a>
+
+            </TMPL_IF>
+
+            </TMPL_LOOP>
+
+        </td>
+    </tr>
+
+    <TMPL_IF NAME="Bucket_If_Show_Letter">
+
+    <tr>
+        <td colspan="2">
+            <TMPL_VAR NAME="Bucket_Word_Table_Title">
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <b>
+                <span class="bucketLetterSelected">
+                    <TMPL_VAR NAME="Bucket_Letter" ESCAPE=HTML>
+                </span>
+            </b>
+        </td>
+        <td valign="top">
+        <table summary="">
+
+            <TMPL_LOOP NAME="Bucket_Loop_Row">
+
+            <tr>
+
+                <TMPL_LOOP NAME="Bucket_Loop_Column">
+
+                <td>
+                    <a class="wordListLink" href="/buckets?session=<TMPL_VAR NAME="Session_Key">&amp;lookup=Lookup&amp;word=<TMPL_VAR NAME="Bucket_Word" ESCAPE=URL>#Lookup">
+                        <b>
+                            <TMPL_VAR NAME="Bucket_Word">
+                        </b>
+                    </a>
+                </td>
+                <td>
+                    <TMPL_VAR NAME="Bucket_Word_Count">
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+
+                </TMPL_LOOP>
+
+            </tr>
+
+            </TMPL_LOOP> <!-- End of loop Bucket_Loop_Row -->
+
+        </table>
+
+        </td>
+    </tr>
+
+    </TMPL_IF>
+
+</table>
+
+</TMPL_IF>
+
+<TMPL_INCLUDE NAME="common-bottom.thtml">

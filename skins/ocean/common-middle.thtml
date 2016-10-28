@@ -1,0 +1,28 @@
+<body dir="<TMPL_VAR NAME="Localize_LanguageDirection">" onLoad="OnLoadHandler()">
+    <div id="navigation">
+        <ul class="menu">
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab0">">
+                <a class="menuLink" href="/history?session=<TMPL_VAR NAME="Session_Key">"><TMPL_VAR NAME="Localize_Header_History"></a>
+            </li>
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab1">">
+                <a class="menuLink" href="/buckets?session=<TMPL_VAR NAME="Session_Key">"><TMPL_VAR NAME="Localize_Header_Buckets"></a>
+            </li>
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab2">">
+                <a class="menuLink" href="/magnets?session=<TMPL_VAR NAME="Session_Key">&amp;start_magnet=0"><TMPL_VAR NAME="Localize_Header_Magnets"></a>
+            </li>
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab3">">
+                <a class="menuLink" href="/configuration?session=<TMPL_VAR NAME="Session_Key">"><TMPL_VAR NAME="Localize_Header_Configuration"></a>
+            </li>
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab4">">
+                <a class="menuLink" href="/security?session=<TMPL_VAR NAME="Session_Key">"><TMPL_VAR NAME="Localize_Header_Security"></a>
+            </li>
+            <li class="<TMPL_VAR NAME="Common_Middle_Tab5">">
+                <a class="menuLink" href="/advanced?session=<TMPL_VAR NAME="Session_Key">"><TMPL_VAR NAME="Localize_Header_Advanced"></a>
+            </li>
+            <li class="shutdownLink">
+                <a class="menuLink" href="/shutdown"><TMPL_VAR NAME="Localize_Header_Shutdown"></a>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="shell">

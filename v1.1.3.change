@@ -1,0 +1,220 @@
+Welcome to POPFile v1.1.3
+
+POPFile is an email classification tool with a Naive Bayes classifier, POP3,
+SMTP, NNTP proxies and IMAP filter and a web interface. It runs on most
+platforms and with most email clients.
+
+This maintenance release fixes some bugs.
+
+Installers are provided for Windows XP or later and Mac OS X 10.3.9 to 10.5.x,
+10.6 (Snow Leopard) and 10.7 (Lion).
+
+The minimal Perl used by the Windows version has been upgraded and as a result
+Windows 9x, Windows Millennium, Windows NT and Windows 2000 are no longer
+officially supported.
+
+WHAT'S CHANGED SINCE v1.1.2
+
+1. Bug fixes
+
+Fixed a bug that the installer for Windows does not install enough Perl
+modules for SSL support by default. (ticket #166)
+
+Fixed a bug that POPFile records a wrong message, "Can't write to the
+configuration file", when it shuts down. (ticket #165)
+
+Fixed a bug that IMAP module of POPFile sometimes crashes when the network
+connection is lost.
+
+
+WHAT'S CHANGED SINCE v1.1.1
+
+1. New features
+
+Magnets now offer improved handling of addresses. If a complete email address
+(e.g. test@example.com) is specified then the magnet will now match only that
+exact address (e.g. anothertest@example.com will not be caught by the magnet).
+Domain magnets (e.g. example.com, @example.com and .example.com) are now
+supported properly. (ticket #76)
+
+For more information about exact match and domain match, see:
+  http://getpopfile.org/docs/glossary:amagnet
+
+The search/bucket filter part of the History tab can be highlighted when the
+page is showing the results of a search or a filter to make it more obvious
+that the page may not be showing all of the message history. You can enable
+this new feature by setting the 'html_search_filter_highlight' option in the
+Advanced tab to 1. (ticket #149)
+
+
+2. Windows version improvements
+
+The installer for Windows now installs SSL support by default. SSL Support
+is now provided by a smaller and simpler package which is more up-to-date
+than the package used in earlier releases. (ticket #153)
+
+Several of the utilities included with the Windows version have been upgraded,
+including the diagnostic utility.
+
+
+3. Mac OS X version improvements
+
+The installers for Mac OS X also install SSL support by default. (ticket #154)
+
+
+4. Other improvements
+
+This is a maintenance release so there are no major new features included.
+
+
+5. Bug fixes
+
+Fixed a bug that POPFile ignored part of message body if the message is encoded
+in Quoted-Printable and a soft line break (=) exists at the end of its body.
+(ticket #130)
+
+Fixed a bug that POPFile wrongly treated some continuation of numbers as IP
+addresses. (ticket #127)
+
+Fixed a bug in some utility scripts that resulted in the removal of some
+entries from the configuration file (popfile.cfg). (ticket #135)
+
+Avoid some Perl warnings.
+
+
+WHERE TO DOWNLOAD
+
+    http://getpopfile.org/download/
+
+
+GETTING STARTED WITH POPFILE
+
+An introduction to installing and using POPFile can be found in the QuickStart
+guide:
+
+  http://getpopfile.org/docs/QuickStart
+
+
+SSL SUPPORT IN WINDOWS
+
+Up until now SSL support has been an optional feature in the Windows version
+and when SSL support was selected the necessary SSL support files were always
+downloaded from the internet.
+
+For this release the Windows version uses a more up-to-date and smaller SSL
+package. As a result the SSL support files are now included in the installer
+and are no longer optional (i.e. they are always installed now).
+
+
+THREE VERSIONS RELEASED FOR MAC OS X
+
+There are three versions of the installer for Mac OS X systems: one for the
+'Lion' release, one for the previous 'Snow Leopard' release and one for the
+the earlier 10.3.9 to 10.5.x releases. The 'Lion' installer has '-lion-' in
+its filename and the 'Snow Leopard' installer has '-sl-' in its filename.
+
+
+I AM USING THE CROSS PLATFORM VERSION
+
+POPFile requires a number of Perl modules that are available from CPAN. You
+will need:
+
+  Date::Parse
+  HTML::Template
+  HTML::Tagset
+  DBD::SQLite (or DBD::SQLite2)
+  DBI
+  TimeDate
+
+You can install all the required POPFile modules by getting the Bundle::POPFile
+bundle from CPAN.
+
+Please refer to the installation instructions on the POPFile wiki:
+
+ http://getpopfile.org/docs/HowTos:CrossPlatformInstall
+
+Japanese users may need to install some extra programs and Perl modules,
+depending upon which Nihongo parser (wakachi-gaki program) they wish to use.
+For more information about how to install them, see the POPFile wiki:
+
+ http://getpopfile.org/docs/JP:HowTos:CrossPlatformInstall
+
+
+KNOWN ISSUES
+
+POPFile currently supports IPv4 only.
+(IPv6 is not supported yet.)
+
+
+CROSS PLATFORM VERSION KNOWN ISSUES
+
+Users of SSL on non-Windows platforms should NOT use IO::Socket::SSL v0.97 or
+v0.99. They are known to be incompatible with POPFile; v1.44 is the most recent
+release of IO::Socket::SSL that works correctly.
+
+
+WINDOWS KNOWN ISSUES
+
+1. ON WINDOWS I WANT TO CHECK MULTIPLE EMAIL ACCOUNTS SIMULTANEOUSLY.
+
+Because the time taken to start a new process on Windows is long under Perl
+there is an optimization for Windows that is present by default: when a new
+connection is made between your email program and POPFile, POPFile handles it
+in the 'parent' process. This means the connect happens fast and mail starts
+downloading very quickly, but it means that you can only download messages from
+one server at a time (up to 6 other connections will be queued up and dealt
+with in the order they arrive) and the UI is unavailable while downloading
+email.
+
+You can turn this behavior off (and get simultaneous UI/email access and as
+many email connections as you like) on the Configuration panel in the UI by
+making sure that "Allow concurrent POP3 connections:" is Yes, or by specifying
+--set pop3_force_fork=1 on the command line.
+
+The default behaviour (no concurrent POP3 connections) can cause email clients
+to time out if several accounts are being checked (because POPFile only handles
+one account at a time it can take a while to process all of the accounts).
+
+If SSL support is being used then the default setting (no concurrent POP3
+connections) _MUST_ be used otherwise POPFile returns an error message.
+
+
+v1.0.0, v1.0.1, v1.1.0, v1.1.1 and v1.1.2 RELEASE NOTES
+
+If you are upgrading from pre-v1.0.0 please read the v1.0.0, v1.0.1, v1.1.0,
+v1.1.1 and v1.1.2 release notes for much more information:
+
+ http://getpopfile.org/docs/ReleaseNotes:1.0.0
+ http://getpopfile.org/docs/ReleaseNotes:1.0.1
+ http://getpopfile.org/docs/ReleaseNotes:1.1.0
+ http://getpopfile.org/docs/ReleaseNotes:1.1.1
+ http://getpopfile.org/docs/ReleaseNotes:1.1.2
+
+
+DONATIONS
+
+Thank you to everyone who has clicked the Donate! button and donated their hard
+earned cash to me in support of POPFile. Thank you also to the people who have
+contributed their time through patches, feature requests, bug reports, user
+support and translations.
+
+ http://getpopfile.org/docs/donate
+
+
+10TH ANNIVERSARY
+
+This year is the tenth anniversary of POPFile. Although it was
+first released to the public in 2002 development actually started
+in 2001. The original version was written in Visual Basic and
+called AutoFile.
+
+We hope to release the long-awaited POPFile version 2 with
+multi-user support later this year.
+
+
+THANKS
+
+Big thanks to all who've contributed to POPFile.
+
+The POPFile Core Team
+(Brian, Joseph, Manni and Naoki)

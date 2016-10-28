@@ -1,0 +1,352 @@
+body {
+  background-color: #FFFFFF;
+  border: 0;
+  font-family: tahoma, arial, sans-serif;
+  color: #000000;
+  margin: 10px 20px 20px 20px; 
+  font-size: 10pt;
+}
+
+h2 {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+h2.history {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+.removeButtonsTop {
+  padding-bottom: 1em;
+}
+.shell, .shellTop {
+  border-right: #000000 2px solid;
+  border-top: #000000 2px solid;
+  margin: 0px;
+  border-left: #000000 2px solid;
+  color: #000000;
+  border-bottom: #000000 2px solid;
+  background-color: #ffcc66;
+}
+
+input, select, textarea {
+  border-right: #000000 1px solid;
+  border-top: #000000 1px solid;
+  border-left: #000000 1px solid;
+  color: #000000;
+  border-bottom: #000000 1px solid;
+  font-family: tahoma, arial, serif;
+  background-color: #faebd7;
+}
+
+input.checkbox {
+  background-color: transparent;
+  border: 0;
+}
+input.submit:hover {
+  background-color: #FFFFFF;
+}
+.menu {
+  font-size: 10pt;
+  font-weight: bold;
+  width: 100%;
+}
+
+.menuSelected {
+  border-right: #000000 2px solid;
+  border-top: #000000 2px solid;
+  border-left: #000000 2px solid;
+  width: 16%;
+  color: black;
+  background-color: #ff9900;
+  font-size: 10pt;
+}
+
+.menuStandard {
+  border-right: #000000 2px solid;
+  border-top: #000000 2px solid;
+  border-left: #000000 2px solid;
+  width: 16%;
+  color: black;
+  background-color: #ffcc66;
+  font-size: 10pt;
+}
+
+.menuLink {
+  display: block;
+  width: 100%;
+}
+tr.rowEven {
+  border-right: #000000 2px solid;
+  border-top: #000000 2px solid;
+  border-left: #000000 2px solid;
+  color: black;
+  border-bottom: #000000 2px solid;
+  background-color: #ffcc66;
+}
+
+tr.rowOdd {
+  border-right: #000000 1px solid;
+  border-top: #000000 1px solid;
+  border-left: #000000 1px solid;
+  color: black;
+  border-bottom: #000000 1px solid;
+  background-color: #ff9900;
+}
+
+a:link {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: none; 
+} 
+
+a:visited { 
+  color: #333333;
+  background-color: transparent;
+  text-decoration: none; 
+} 
+
+a:hover {
+  text-decoration: underline; 
+} 
+
+hr {
+  color: #000000;
+  background-color: transparent; 
+}
+
+td.naked {
+  padding: 0; 
+  margin: 0; 
+  border: 0;
+}
+
+td.logo2menuSpace {
+  height: 0.5em;
+}
+
+td.head {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+table.head {
+  border-right: #000000 2px;
+  border-top: #000000 2px;
+  font-weight: bold;
+  font-size: 12pt;
+  background: #ffcc66;
+  margin: 0px;
+  border-left: #000000 2px;
+  width: 100%;
+  color: #000000;
+  border-bottom: #000000 2px;
+  font-family: tahoma, arial, sans-serif;
+}
+
+a.logoutLink, a.shutdownLink {
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+td.footerBody {
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 33%;
+}
+
+table.footer {
+  border-right: #000000 2px solid;
+  border-top: #000000 2px solid;
+  margin: 1em 0px 0px;
+  border-left: #000000 2px solid;
+  width: 100%;
+  color: #000000;
+  border-bottom: #000000 2px solid;
+  background-color: #ffcc66;
+}
+
+table.settingsTable {
+  border: 1px solid #000000;
+}
+
+table.openMessageTable, table.lookupResultsTable {
+  border: 2px solid #000000;
+}
+
+td.openMessageCloser {
+  text-align: right;
+}
+
+td.openMessageBody {
+  text-align: left;
+}
+
+td.settingsPanel {
+  border: 1px solid #000000;
+}
+
+.menuIndent {
+  width: 2%;
+}
+
+td.accuracy0to49 {
+  background-color: red;
+  color: black;
+}
+
+td.accuracy50to93 {
+  background-color: yellow;
+  color: black;
+}
+
+td.accuracy94to100 {
+  background-color: green;
+  color: black;
+}
+
+div.error01 {
+  background-color: transparent;
+  color: red;
+  font-size: larger;
+}
+
+div.error02 {
+  background-color: transparent;
+  color: red;
+}
+
+span.graphFont {
+  font-size: x-small;
+}
+
+.historyLabel {
+  font-weight: normal;
+}
+
+.historyLabel em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.bucketsLabel {
+  font-weight: bold;
+}
+
+.magnetsLabel {
+  font-weight: bold;
+}
+
+.securityLabel {
+  font-weight: bold;
+}
+
+.configuration {
+  font-size: 11pt;
+}
+
+.configurationLabel {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.advancedLabel {
+  font-weight: bold;
+}
+    
+.passwordLabel {
+  font-weight: bold;
+}
+
+.sessionLabel {
+  font-weight: bold;
+}
+
+a.menuLink {
+  font-weight:bold;
+}
+
+table.historyWidgetsTop {
+  width: 100%;
+  margin-left: 1.5em;
+  margin-top: 0.6em;
+  margin-bottom: 1.0em;
+}
+
+table.historyButtonsBottom {
+  width: 100%;
+  margin-top: 0.6em;
+}
+
+td.historyNavigatorTop {
+  text-align: right;
+  vertical-align: top;
+}
+
+.historyNavigatorTop form, .historyNavigatorBottom form {
+  margin: 0.2em 0;
+}
+
+td.historyNavigatorBottom {
+  text-align: right;
+}
+
+table.historyWidgetsBottom {
+  width: 100%;
+  margin-top: 0.6em;
+}
+
+span.bucketsWidgetState {
+  font-weight: bold;
+}
+
+span.configWidgetState {
+  font-weight: bold;
+}
+
+span.securityWidgetState {
+  font-weight: bold;
+}
+
+tr.rowBoundary {
+  background-color: #000000;
+}
+
+div.helpMessage {
+  background-color: #ff9900;
+  border: #000000 2px solid;
+  padding: 0.3em;
+}
+
+div.helpMessage form {
+  margin: 0;
+}
+
+.viewHeadings {
+  display: inline;
+}
+
+td.top20 td.historyNavigatorTop a + a {
+  border-left: 1px solid black;
+  padding-left: 0.5em;
+}
+
+.historyMagnetUsed {
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.historyMagnetUsed img {
+  vertical-align: bottom;
+}
+
+.historyMagnetUsed span {
+  font-size:80%;
+  vertical-align: middle;
+}
+
+div.historySearchFilterActive {
+  background-color: #ff9900;
+}

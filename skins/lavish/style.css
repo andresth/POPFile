@@ -1,0 +1,373 @@
+/* Lavish by Dan Martin (kraelen) */
+
+body {
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  color: #ffffff;
+  font-family: sans-serif;
+  background-color: #000000;
+}
+
+.shell, .shellTop {
+  width: 100%;
+  border-style: none;
+  border-collapse: collapse;
+  background-color: #000000;
+  color: #ffffff;
+  border-spacing: 0;
+}
+
+.shellTopLeft {
+  background-image: url(topLeft.gif);
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  border-style: none;
+}
+
+.shellTopRight {
+  background-image: url(topRight.gif);
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  height: 22px;
+}
+
+.shellTopCenter {
+  background-image: url(top.gif);
+  background-repeat: repeat-x;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.shellLeft {
+  padding: 0;
+  background-image: url(left.gif);
+  margin: 0;
+  width: 20px;
+  border-style: none;
+  background-repeat: repeat-y;
+}
+
+.shellRight {
+  padding: 0;
+  background-image: url(right.gif);
+  margin: 0;
+  width: 22px;
+  border-style: none;
+  background-repeat: repeat-y;
+}
+
+.shellBottomCenter {
+  padding: 0;
+  background-image: url(bottom.gif);
+  margin: 0;
+  border-style: none;
+  background-repeat: repeat-x;
+  height: 22px;
+}
+
+.shellBottomLeft {
+  padding: 0;
+  background-image: url(bottomLeft.gif);
+  margin: 0;
+  border-style: none;
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 20px;
+}
+
+.shellBottomRight {
+  padding: 0;
+  background-image: url(bottomRight.gif);
+  margin: 0;
+  border-style: none;
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 22px;
+}
+
+table.head {
+  width: 100%;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+td.head {
+  font-weight: normal;
+  font-size: 14pt;
+  font-family: sans-serif;
+}
+
+.menu {
+  font-weight: normal;
+  font-size: 10pt;
+  background-image: url(menu.gif);
+  width: 100%;
+}
+
+.menuSelected, .menuStandard {
+  width: 124px;
+
+}
+
+.menuIndent {
+  padding: 0;
+  margin: 0;
+  width: 0;
+}
+
+tr.rowEven {
+  font-size:  0.9em ;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+tr.rowOdd {
+  font-size:  0.9em ;
+  color: #FFFFFF;
+  background-color: #101010;
+}
+
+tr.rowHighlighted {
+  color: #EEEEEE;
+  background-color: transparent;
+}
+
+table.footer {
+  width: 100%;
+  padding-top: 1em;
+}
+
+table.settingsTable {
+  border: #EFEFF7 1px solid;
+}
+
+table.openMessageTable, table.lookupResultsTable {
+  border: #EFEFF7 3px solid;
+}
+
+td.openMessageCloser {
+  text-align: right;
+}
+
+td.openMessageBody {
+  text-align: left;
+}
+
+td.settingsPanel {
+  border: black 1px solid;
+}
+
+.naked {
+  border: medium none;
+  padding: 10px;
+  font-size: 10pt;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  background-color: #181818;
+}
+
+td.accuracy0to49 {
+  color: black;
+  background-color: red;
+}
+
+td.accuracy50to93 {
+  color: black;
+  background-color: yellow;
+}
+
+td.accuracy94to100 {
+  color: black;
+  background-color: green;
+}
+
+div.error01 {
+  font-size: larger;
+  color: red;
+  background-color: transparent;
+}
+
+div.error02 {
+  color: red;
+  background-color: transparent;
+}
+
+span.graphFont {
+  font-size: x-small;
+}
+
+.historyLabel, .bucketsLabel, .magnetsLabel, .securityLabel {
+  font-weight: bold;
+}
+
+.configurationLabel, .advancedLabel, .passwordLabel, .sessionLabel {
+  font-weight: bold;
+}
+
+td.logo2menuSpace {
+  height: 0.8em;
+}
+
+td.footerBody {
+  font-size: 10pt;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: transparent;
+  width: 33%;
+}
+
+table.historyWidgetsTop {
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+  margin-left: 1.5em;
+  width: 100%
+}
+
+table.historyWidgetsBottom {
+  margin-top: 0.6em;
+  width: 100%;
+}
+
+td.historyNavigatorTop {
+  text-align: right;
+}
+
+td.historyNavigatorBottom {
+  text-align: right;
+}
+
+.menuSelected a {
+  font-weight: bold;
+  font-size: 10pt;
+  color: #000000;
+  background-color: transparent;
+}
+
+.menuStandard a {
+  font-weight: bold;
+  font-size: 10pt;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+a {
+  font-size: 10pt;
+  color: white;
+  background-color: transparent;
+}
+
+select, input, textarea {
+  border-right: #FFFFFF 2px solid;
+  border-top: #000000 2px solid;
+  border-left: #000000 2px solid;
+  border-bottom: #FFFFFF 2px solid;
+  color: #FFFFFF;
+  background-color: #313131;
+}
+
+input.checkbox {
+  background-color: transparent;
+}
+.submit, .toggleOn, .toggleOff, .undoButton, .deleteButton, .reclassifyButton {
+  border-right: #000000 2px solid;
+  border-top: #FFFFFF 2px solid;
+  border-left: #FFFFFF 2px solid;
+  border-bottom: #000000 2px solid;
+  color: #FFFFFF;
+  background-color: #313131;
+}
+
+hr {
+  color: #EFEFF7;
+  background-color: transparent;
+}
+
+a:link:hover, a:visited:hover {
+  color: #000000;
+  background-color: #EFEFF7;
+}
+
+.menuSelected a, .menuStandard a:hover {
+  color: #000000;
+  background-image: url(buttonSelected.gif);
+  padding-left: 6px;
+}
+.menuStandard a, .menuSelected a:hover {
+  color: #FFFFFF;
+  background-image: url(buttonUnselected.gif);
+  padding-left: 6px;
+}
+.menuSpacer {
+  padding: 0;
+  margin: 0;
+  width: 0;
+}
+
+.historyLabel em {
+  font-style: normal;
+}
+
+tr.rowBoundary {
+  background-color: #050505;
+}
+
+/*********************************************************/
+/* Menu Settings */
+.menuLink {             /* makes entire menu tab clickable */
+  display: block;
+  width: 100%;
+}
+/*********************************************************/
+/* Messages */
+div.helpMessage {
+  background-color: #101010;
+  border: 1px solid #FFFFFF;
+  padding: 0.4em;
+}
+div.helpMessage form {
+  margin: 0;
+}
+/*********************************************************/
+/* Positioning */
+.historyNavigatorTop, .historyNavigatorBottom {
+  text-align: right;
+  vertical-align: top;
+}
+.refreshLink {		// optional, link can be hidden
+  margin-top: 0.5em;
+}
+h2.history {		// optional
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+.removeButtonsTop {	// spacing for top remove buttons (can be used to hide the top set of buttons)
+  padding-bottom: 1em;
+}
+.historyMagnetUsed {
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.historyMagnetUsed img {
+  vertical-align: bottom;
+}
+
+.historyMagnetUsed span {
+  font-size:80%;
+  vertical-align: middle;
+}
+
+div.historySearchFilterActive {
+  color: black;
+  background-color: #EFEFF7;
+}

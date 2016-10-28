@@ -1,0 +1,299 @@
+body {
+  background-color: #919AC9;
+  border: none;
+  font-family: verdana, sans-serif;
+  color: white;
+}
+
+a {
+  color: white;
+  background-color: transparent;
+}
+
+input, select, textarea, .submit {
+  color: white;
+  background-color: #363E68;
+  border: 1px #919AC9 solid;
+  font-weight: bold;
+  font-family: verdana, sans-serif;
+  font-size: 0.9em;
+}
+
+input.submit:hover {
+  background-color: #363E75;
+}
+
+.shell, .shellTop {
+  background-color: #4C558E;
+  border: 3px #363E68 solid;
+  color: white;
+}
+
+table.head {
+  width: 100%;
+  background-color : #4C558E;
+  color: white;
+}
+
+td.head {
+  font-weight: normal;
+  font-size: 1.3em;
+  background-color : #4C558E;
+  color: white;
+}
+
+a.shutdownLink, a.logoutLink {
+  background-color : #4C558E;
+  color: white;
+  font-size: 1em;
+}
+
+.menu {
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.menuLink {
+  color: white;
+  background-color: transparent;
+}
+
+.menuSelected {
+  background-color: #363E68;
+  width: 150px;
+  color: white;
+}
+
+.menuStandard {
+  background-color: #4C558E;
+  width: 150px;
+  color: white;
+}
+
+
+tr.rowEven {
+  background-color: #4C558E;
+  color: white;
+}
+
+tr.rowOdd {
+  background-color: #363E68;
+  color: white;
+}
+
+table.settingsTable {
+  border: 1px solid #363E68;
+}
+
+table.openMessageTable, table.lookupResultsTable {
+  border: 3px solid #363E68;
+}
+
+td.settingsPanel {
+  border: 1px solid #363E68;
+}
+
+td.naked {
+  padding: 0px; 
+  margin: 0px; 
+  border: none
+}
+
+a.bottomLink {
+  background-color : transparent;
+  color: white;
+}
+
+.menuIndent {
+  width: 7%;
+}
+
+td.historyWidgetsTop {
+  width: 100%;
+  margin-left: 1.5em;
+  margin-top: 0.6em;
+  margin-bottom: 1.0em;
+}
+
+td.historyNavigatorTop {
+  text-align: right;
+  padding-right: 0.5em;
+  vertical-align: top;
+}
+
+td.historyNavigatorBottom {
+  text-align: right;
+  padding-right: 0.5em;
+  padding-bottom: 1.0em;
+}
+
+table.historyWidgetsBottom {
+  width: 100%;
+  margin-left: 0.5em;
+  margin-top: 1.5em;
+}
+
+a.messageLink:link {
+  background-color : transparent;
+  color: white;
+}
+
+td.openMessageCloser {
+  text-align: right;
+}
+
+a.changeSettingLink {
+  background-color: transparent ;
+  color: #DDEEFF;
+}
+
+table.footer {
+  width: 100%;
+  margin-top: 1em;
+}
+
+td.footerBody { 
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #4C558E;
+  border: 3px #252A49 solid;
+  color: white;
+  width: 33%;
+}
+
+h2.security {
+  color: white;
+  background-color: transparent;
+}
+
+h2.advanced {
+  color: white;
+  background-color: transparent;
+}
+
+td.logo2menuSpace { 
+  height: 0.8em;
+}
+
+tr.rowHighlighted {
+  background-color: #000030;
+  color: #EEEEEE;
+}
+
+span.graphFont {
+  font-size: x-small;
+}
+
+.bucketsLabel {
+  font-weight: bold;
+}
+
+.magnetsLabel {
+  font-weight: bold;
+}
+
+.securityLabel {
+  font-weight: bold;
+}
+
+.configurationLabel {
+  font-weight: bold;
+}
+    
+.advancedLabel {
+  font-weight: bold;
+}
+    
+.passwordLabel {
+  font-weight: bold;
+}
+
+.sessionLabel {
+  font-weight: bold;
+}
+
+div.error01 {
+  background-color: transparent;
+  color: red;
+  font-size: larger;
+}
+
+div.error02 {
+  background-color: transparent;
+  color: red;
+}
+
+td.accuracy0to49 {
+  background-color: red;
+  color: black;
+}
+
+td.accuracy50to93 {
+  background-color: yellow;
+  color: black;
+}
+
+td.accuracy94to100 {
+  background-color: green;
+  color: black;
+}
+
+span.bucketsWidgetState {
+  font-weight: bold;
+}
+
+span.configWidgetState {
+  font-weight: bold;
+}
+
+span.securityWidgetState {
+  font-weight: bold;
+}
+
+.historyLabel {
+  font-weight: normal;
+}
+
+.historyLabel em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+tr.rowBoundary {
+  background-color: #FFFFFF;
+}
+
+div.helpMessage {
+  border: 2px solid #363E68;
+  padding: 0.4em;
+}
+
+div.helpMessage form {
+  margin: 0;
+}
+
+.menuLink {
+  display: block;
+  width: 100%;
+}
+
+.historyMagnetUsed {
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.historyMagnetUsed img {
+  vertical-align: bottom;
+}
+
+.historyMagnetUsed span {
+  font-size:80%;
+  vertical-align: middle;
+}
+
+div.historySearchFilterActive {
+  background-color: #363E68;
+}

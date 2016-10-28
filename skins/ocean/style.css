@@ -1,0 +1,245 @@
+body {
+ background-color: #adcbd1;
+ color: black;
+ z-index: 2;
+ padding: 0 2px;
+ margin: 0;
+ font-size: 0.9em;
+ font-family: "trebuchet ms", tahoma, sans-serif;
+}
+
+
+a:link, a:visited, a:hover, a:active {
+ text-decoration: none;
+}
+
+
+ul.menu {
+ list-style-type: none;
+ padding: 0;
+ margin: 0;
+}
+
+
+ul.menu li {
+ float: left;
+ width: auto;
+}
+
+
+ul.menu li a:link, ul.menu li a:visited, ul.menu li a:hover, ul.menu li a:active {
+ padding: 0 20px;
+ display: block;
+ margin: 2px;
+}
+
+
+#navigation {
+ position: relative;
+ top: 5px;
+ left: 0;
+ width: 100%;
+ z-index: 1;
+}
+body > #navigation {
+ position: fixed;
+}
+
+
+#navigation ul.menu li.shutdownLink {
+ float: right;
+ margin-right: 4px;
+}
+
+
+#navigation a:link, #navigation a:visited, #navigation a:active {
+ padding: 10px 10px;
+ margin: 0 0 0 3px;
+ font-size: 1.2em;
+ line-height: 1.2em;
+ color: black;
+ color: #367D8A;
+}
+
+
+.menuStandard a:link, .menuStandard a:visited {
+ border: 2px solid gray;
+ background-color: #d7d4cc;
+}
+
+
+.menuSelected a:link, .menuSelected a:visited {
+ border: 2px solid white;
+ background-color: #d7d4cc;
+}
+
+
+.shutdownLink a:link, .shutdownLink a:visited {
+ border: 2px solid #be6060;
+ background-color: #d7d4cc;
+ color: #c82c2c !important;
+}
+
+
+#navigation a:hover {
+ border: 2px solid #e0e0e0;
+ background-color: #eaa;
+}
+
+
+#content {
+ position: relative;
+ top: 4em;
+ left: 1%;
+ width: 98%;
+}
+
+
+#shell {
+ border: 3px solid #777;
+ background-color: #e0e0e0;
+ width: 98%;
+ padding: 1%;
+}
+
+
+.toggleOff {
+	border-top: 2px groove #404040;
+	border-left: 2px groove #404040;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+
+.toggleOn {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 2px ridge #404040;
+	border-bottom: 2px ridge #404040;
+}
+
+
+.rowEven {
+ background-color: #e0e0e0;
+}
+
+
+.rowOdd {
+ background-color: #d5d5d5;
+}
+
+
+.rowEven:hover, .rowOdd:hover {
+ background-color: #eeecec;
+}
+
+
+.rowBoundary {
+ background-color: InfoBackground;
+}
+
+
+
+.historyNavigatorTop, .historyNavigatorBottom, .openMessageCloser {
+ text-align: right;
+}
+
+.settingsPanel {
+ border: 2px groove white;
+ padding: 5px;
+ width: auto;
+}
+
+
+.settingsTable {
+ border-spacing: 5px;
+ width: 100%;
+}
+
+
+th {
+ text-align: left;
+}
+
+
+.bucketsLabel {
+ text-align: center;
+}
+
+
+#footer {
+ width: 96%;
+ left: 2%;
+ padding: 40px 0;
+ font-size: 0.9em;
+ text-align: center;
+}
+
+#footer p {
+ margin: 0;
+ padding: 0;
+}
+
+#footer a {
+ display: inline;
+ padding: 0 20px;
+}
+
+.messageHeaders td + td {
+ padding-left: 20px;
+}
+
+.top20Words {
+ font-family: "Andale mono", "Courier new", monospace;
+}
+
+.messageHeaders td {
+ font-size: 1.2em;
+ vertical-align: top;
+}
+
+.helpMessage {
+ font-size: 1.1em;
+ background-color: #f0f0f0;
+ color: black;
+ padding: 20px;
+ border: 2px dashed red;
+}
+
+div.helpMessage form {
+  margin: 0;
+}
+
+input {
+ font-size: 1em;
+}
+
+.advancedAlphabet, .advancedAlphabetGroupSpacing {
+ vertical-align: top;
+}
+ 
+ 
+.date {
+ white-space: nowrap;
+ font-size: 0.8em;
+}
+
+
+.historyMagnetUsed {
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.historyMagnetUsed img {
+  vertical-align: bottom;
+}
+
+.historyMagnetUsed span {
+  font-size:80%;
+  vertical-align: middle;
+}
+
+div.historySearchFilterActive {
+ background-color: #eaa;
+}

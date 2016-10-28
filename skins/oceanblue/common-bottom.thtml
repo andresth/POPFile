@@ -1,0 +1,47 @@
+            </div>
+            <span class="shellRight"></span>
+        </div>
+        <div class="shellBottomRow">
+            <span class="shellBottomLeft"></span>
+            <span class="shellBottomCenter"></span>
+            <span class="shellBottomRight"></span>
+        </div>
+    </div>
+
+    <div class="footer">
+    <ul>
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/"><TMPL_VAR NAME="Localize_Footer_HomePage"></a>
+        </li>
+
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/docs/"><TMPL_VAR NAME="Localize_Footer_Wiki"></a>
+        </li>
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_FAQLink">"><TMPL_VAR NAME="Localize_FAQ"></a>
+        </li>
+        <li class="footerBody">
+            <a>&nbsp;</a>
+        </li>
+        <li class="footerBody">
+            <TMPL_VAR NAME="Common_Bottom_Version">
+        </li>
+        <li class="footerBody">
+            (<TMPL_VAR NAME="Common_Bottom_Date"> - <TMPL_VAR NAME="Common_Bottom_LastLogin">)
+        </li>
+        <li class="footerBody">
+            &nbsp;
+        </li>
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_RequestFeatureLink">"><TMPL_VAR NAME="Localize_Footer_RequestFeature"></a>
+        </li>
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_MailingListLink">"><TMPL_VAR NAME="Localize_Footer_MailingList"></a>
+        </li>
+        <li class="footerBody">
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_DonateLink">"><TMPL_VAR NAME="Localize_Footer_FeedMe"></a>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

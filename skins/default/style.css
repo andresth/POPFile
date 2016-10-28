@@ -1,0 +1,293 @@
+/*********************************************************/
+/* Main Body */
+
+body {
+  color: #000000;
+  background-color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
+/*********************************************************/
+/* Shell structure */
+
+.shell, .shellTop {
+  color: #000000;
+  background-color: #EDEDCA;
+  border: 3px #CCCC99 solid;
+}
+
+table.head {
+  width: 100%;
+}
+
+td.head {
+  font-weight: normal;
+  font-size: 1.8em;
+}
+
+table.footer {
+  width: 100%;
+}
+
+td.footerBody {
+  width:33%;
+  text-align: center;
+}
+
+td.naked {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+td.logo2menuSpace {
+  height: 0.8em;
+}
+
+/*********************************************************/
+/* Menu Settings */
+
+.menu {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.menuSelected {
+  color: #000000;
+  background-color: #CCCC99;
+  width: 14%;
+}
+
+.menuStandard {
+  color: #000000;
+  background-color: #EDEDCA;
+  width: 14%;
+}
+
+.menuIndent {
+  width: 8%;
+}
+
+.menuLink {
+  display: block;
+  width: 100%;
+}
+
+/*********************************************************/
+/* Table Settings */
+
+table.settingsTable {
+  border: 1px solid #CCCC99;
+}
+
+td.settingsPanel {
+  border: 1px solid #CCCC99;
+}
+
+table.openMessageTable {
+  border: 3px solid #CCCC99;
+}
+
+td.openMessageBody {
+  text-align: left;
+}
+
+td.openMessageCloser {
+  text-align: right;
+}
+
+tr.rowEven {
+  color: #000000;
+  background-color: #EDEDCA;
+}
+
+tr.rowOdd {
+  color: #000000;
+  background-color: #DFDFAF;
+}
+
+tr.rowHighlighted {
+  color: #000000;
+  background-color: #B7B7B7;
+}
+
+tr.rowBoundary { 
+  background-color: #CCCC99;
+}
+
+table.lookupResultsTable {
+  border: 3px solid #CCCC99;
+}
+
+/*********************************************************/
+/* Graphics */
+
+td.accuracy0to49 {
+  background-color: red;
+  color: black;
+}
+
+td.accuracy50to93 {
+  background-color: yellow;
+  color: black;
+}
+
+td.accuracy94to100 {
+  background-color: green;
+  color: black;
+}
+
+span.graphFont {
+  font-size: x-small;
+}
+
+/*********************************************************/
+/* Messages */
+
+div.error01 {
+  background-color: transparent;
+  color: red;
+  font-size: larger;
+}
+
+div.error02 {
+  background-color: transparent;
+  color: red;
+}
+
+div.helpMessage {
+  background-color: #DFDFAF;
+  border: 2px solid #CCCC99;
+  padding: 0.4em;
+}
+
+div.helpMessage form {
+  margin: 0;
+}
+
+/*********************************************************/
+/* Form Labels */
+
+th.historyLabel {
+  text-align: left;
+  font-weight: bold;
+}
+
+.historyLabelSort {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.bucketsLabel {
+  font-weight: bold;
+}
+
+.magnetsLabel {
+  font-weight: bold;
+}
+
+.securityLabel {
+  font-weight: bold;
+}
+
+.configurationLabel {
+  font-weight: bold;
+}
+
+.advancedLabel {
+  font-weight: bold;
+}
+
+.passwordLabel {
+  font-weight: bold;
+}
+
+.sessionLabel {
+  font-weight: bold;
+}
+
+.bucketsWidgetStateOn, .bucketsWidgetStateOff {
+  font-weight: bold;
+}
+
+.configWidgetStateOn, .configWidgetStateOff {
+  font-weight: bold;
+}
+
+.securityWidgetStateOn, .securityWidgetStateOff {
+  font-weight: bold;
+}
+
+/*********************************************************/
+/* Positioning */
+
+td.historyWidgetsTop form {
+  margin: 0;
+  padding: 0;
+}
+
+form.historyForm {
+  margin: 0;
+  padding: 0;
+}
+
+.historyNavigatorTop, .historyNavigatorBottom {
+  text-align: right;
+  vertical-align: top;
+}
+
+.historyNavigatorTop form, .historyNavigatorBottom form {
+  display:inline;
+}
+
+.refreshLink {
+  margin-top: 0.5em;
+}
+
+.magnetsTable caption {
+  text-align: left;
+}
+
+h2.history, h2.buckets, h2.magnets, h2.users {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+.search {
+  display: inline;
+  float: left;
+  padding-right: 1em;
+}
+
+.filter {
+  display: inline;
+}
+
+.removeButtonsTop {
+  padding-bottom: 1em;
+}
+
+.viewHeadings {
+  display: inline;
+}
+
+.historyMagnetUsed {
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.historyMagnetUsed img {
+  vertical-align: bottom;
+}
+
+.historyMagnetUsed span {
+  font-size:80%;
+  vertical-align: middle;
+}
+
+div.historySearchFilterActive {
+  background-color: #DFDFAF;
+}

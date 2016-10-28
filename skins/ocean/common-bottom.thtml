@@ -1,0 +1,24 @@
+    </div>
+    <div id="footer">
+        <p>
+            <a class="bottomLink" href="http://getpopfile.org/"><TMPL_VAR NAME="Localize_Footer_HomePage"></a>
+            <a class="bottomLink" href="http://getpopfile.org/docs"><TMPL_VAR NAME="Localize_Footer_Wiki"></a>
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_FAQLink">"><TMPL_VAR NAME="Localize_FAQ"></a>
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_RequestFeatureLink">"><TMPL_VAR NAME="Localize_Footer_RequestFeature"></a>
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_MailingListLink">"><TMPL_VAR NAME="Localize_Footer_MailingList"></a>
+            <a class="bottomLink" href="http://getpopfile.org/docs/<TMPL_VAR NAME="Localize_DonateLink">"><TMPL_VAR NAME="Localize_Footer_FeedMe"></a>
+            <br />
+            POPFile <TMPL_VAR NAME="Common_Bottom_Version"> (<TMPL_VAR NAME="Common_Bottom_Date"><TMPL_VAR NAME="Common_Bottom_LastLogin">)
+            <TMPL_IF NAME="Common_Middle_If_UpdateCheck">
+                <a href="http://getpopfile.org/download/">
+                    <img border="0" alt="" src="http://getpopfile.org/cgi-bin/popfile_update.pl?ma=<TMPL_VAR NAME="Common_Middle_Major_Version">&amp;mi=<TMPL_VAR NAME="Common_Middle_Minor_Version">&amp;bu=<TMPL_VAR NAME="Common_Middle_Build_Version">" />
+                </a>
+            </TMPL_IF>
+            <TMPL_IF NAME="Common_Middle_If_SendStats">
+                <img border="0" alt="" src="http://getpopfile.org/cgi-bin/popfile_stats.pl?bc=<TMPL_VAR NAME="Common_Middle_Buckets">&amp;mc=<TMPL_VAR NAME="Common_Middle_Messages">&amp;ec=<TMPL_VAR NAME="Common_Middle_Errors">" />
+            </TMPL_IF>
+        </p>
+     </div>
+</div>
+</body>
+</html>

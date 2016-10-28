@@ -1,0 +1,262 @@
+<TMPL_INCLUDE NAME="common-top.thtml">
+<TMPL_INCLUDE NAME="common-middle.thtml">
+
+<!-- a table for the title of this page and navigation controls: prev next close -->
+<table width="100%" summary="">
+    <tr>
+        <td align="left">
+            <h2 class="buckets"><TMPL_VAR NAME="Localize_View_Title"></h2>
+        </td>
+
+        <td class="openMessageCloser">
+            <a class="messageLink" href="/history?<TMPL_VAR NAME="View_All_Fields">">
+                <span class="historyLabel"><TMPL_VAR NAME="Localize_Close"></span>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!-- a table for the message to be viewed -->
+<table class="openMessageTable" cellpadding="10%" cellspacing="0" width="100%" summary="<TMPL_VAR NAME="Localize_History_OpenMessageSummary">">
+    <tr>
+        <td class="openMessageCloser" colspan="2">
+            <a class="messageLink" href="#message_header"><TMPL_VAR NAME="Localize_View_MessageHeader"></a>
+
+            <TMPL_IF NAME="View_If_Magnetized">
+            <TMPL_ELSE>
+            | <a class="messageLink" href="#message_body"><TMPL_VAR NAME="Localize_View_MessageBody"></a>
+            </TMPL_IF>
+
+            <TMPL_IF NAME="View_QuickMagnets_If">
+            | <a class="messageLink" href="#quick_magnets"><TMPL_VAR NAME="Localize_QuickMagnets"></a>
+            </TMPL_IF>
+
+            <TMPL_IF NAME="View_If_Magnetized">
+            <TMPL_ELSE>
+            | <a class="messageLink" href="#scores"><TMPL_VAR NAME="Localize_Scores"></a>
+            </TMPL_IF>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <form id="HistoryMainForm" action="/history" method="post">
+                <input type="hidden" name="search" value="<TMPL_VAR NAME="View_Field_Search">" />
+                <input type="hidden" name="sort" value="<TMPL_VAR NAME="View_Field_Sort">" />
+                <input type="hidden" name="session" value="<TMPL_VAR NAME="Session_Key">" />
+                <input type="hidden" name="negate" value="<TMPL_VAR NAME="View_Field_Negate">" />
+                <input type="hidden" name="start_message" value="<TMPL_VAR NAME="View_This_Page">" />
+                <input type="hidden" name="filter" value="<TMPL_VAR NAME="View_Field_Filter">" />
+
+                <table align="left" summary="">
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_From">:
+                                </b>
+                            </font>
+                        </td>
+                        <td align=left>
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_From" ESCAPE=HTML>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_To">:
+                                </b>
+                            </font>
+                        </td>
+                        <td>
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_To" ESCAPE=HTML>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_Cc">:
+                                </b>
+                            </font>
+                        </td>
+                        <td>
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_Cc" ESCAPE=HTML>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_Date">:
+                                </b>
+                            </font>
+                        </td>
+                        <td>
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_Date" ESCAPE=HTML>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_Subject">:
+                                </b>
+                            </font>
+                        </td>
+                        <td>
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_Subject" ESCAPE=HTML>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_Classification">:
+                                </b>
+                            </font>
+                        </td>
+                        <td>
+                            <font size="+1">
+                                <span style="color:<TMPL_VAR NAME="View_Bucket_Color">">
+                                    <TMPL_VAR NAME="View_Bucket">
+                                </span>
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <TMPL_IF NAME="View_If_Class_Changed">
+
+                    <tr valign="top">
+                        <td colspan="2">
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_History_ChangedClass">
+                                    <span style="color:<TMPL_VAR NAME="View_Class_Changed_Color">">
+                                        <TMPL_VAR NAME="View_Class_Changed">
+                                    </span>
+                                </b>
+                            </font>
+                        </td>
+                    </tr>
+
+                    </TMPL_IF>
+
+                    <tr valign="top">
+
+                        <TMPL_IF NAME="View_If_Reclassified">
+
+                        <td colspan="2">
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="View_Already">
+                                </b>
+                            </font>
+
+                            <input type="submit" class="undoButton" name="undo_<TMPL_VAR NAME="View_Index">" value="<TMPL_VAR NAME="Localize_Undo">">
+                        </td>
+
+                        <TMPL_ELSE>
+
+                        <TMPL_IF NAME="View_If_Magnetized">
+
+                        <td colspan="2">
+                            <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_History_MagnetUsed">:
+                                </b>
+                            </font>
+
+                            <font size="+1">
+                                <TMPL_VAR NAME="View_Magnet">
+                            </font>
+                        </td>
+
+                        <TMPL_ELSE>
+
+                        <td colspan="2">
+                           <font size="+1">
+                                <b>
+                                    <TMPL_VAR NAME="Localize_History_ShouldBe">:
+                                </b>
+                            </font>
+
+                            <select name="reclassify_<TMPL_VAR NAME="View_Index">">
+                                <option selected="selected">&nbsp;</option>
+
+                                <TMPL_LOOP NAME="View_Loop_Buckets">
+
+                                <option value="<TMPL_VAR NAME="View_Bucket">" style="color: <TMPL_VAR NAME="View_Bucket_Color">">
+                                    <TMPL_VAR NAME="View_Bucket">
+                                </option>
+
+                                </TMPL_LOOP>
+
+                            </select>
+                            <input type="submit" class="reclassifyButton" name="change" value="<TMPL_VAR NAME="Localize_Reclassify">" />
+                        </td>
+
+                        </TMPL_IF>
+
+                        </TMPL_IF>
+
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="openMessageBody">
+            <hr />
+            <a name="message_header" />
+            <TMPL_VAR NAME="View_Message">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="top20" valign="top">
+
+            <!-- the following was inserted by view-quickmagnets-widget.thtml -->
+            <TMPL_INCLUDE NAME="view-quickmagnets-widget.thtml">
+            <!-- end of view-quickmagnets-widget.thtml -->
+
+            <TMPL_IF NAME="View_If_Magnetized">
+
+            <TMPL_VAR NAME="View_Magnet_Reason">
+
+            <TMPL_ELSE>
+
+            <!-- the following was inserted by view-scores-widget.thtml -->
+            <TMPL_INCLUDE NAME="view-scores-widget.thtml">
+            <!-- end of view-scores-widget.thtml -->
+
+            </TMPL_IF>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a class="messageLink" href="/view?view=<TMPL_VAR NAME="View_This">&amp;session=<TMPL_VAR NAME="Session_Key">&amp;text=1"><TMPL_VAR NAME="Localize_View_DownloadMessage"></a>
+        </td>
+
+        <td class="openMessageCloser">
+            <a class="messageLink" href="/history?<TMPL_VAR NAME="View_All_Fields">"><span class="historyLabel"><TMPL_VAR NAME="Localize_Close"></span></a>
+        </td>
+    </tr>
+</table>
+
+<TMPL_INCLUDE NAME="common-bottom.thtml">

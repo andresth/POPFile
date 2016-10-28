@@ -1,0 +1,26 @@
+            <form class="securitySwitch" action="/security" method="post">
+                <div class="securityLabel">
+                    <TMPL_VAR NAME="Localize_Security_XMLRPC">:
+                </div>
+
+                <input type="hidden" name="session" value="<TMPL_VAR NAME="Session_Key">" />
+
+                <TMPL_IF NAME="XMLRPC_local_on">
+
+                <span class="securityWidgetStateOff">
+                    <TMPL_VAR NAME="Localize_Security_NoStealthMode">
+                </span>
+                <input type="submit" class="toggleOn" id="securityAcceptXMLRPCOn" name="toggle" value="<TMPL_VAR NAME="Localize_ChangeToYes">" />
+                <input type="hidden" name="xmlrpc_local" value="1" />
+
+                <TMPL_ELSE>
+
+                <span class="securityWidgetStateOn">
+                    <TMPL_VAR NAME="Localize_Yes">
+                </span>
+                <input type="submit" class="toggleOff" id="securityAcceptXMLRPCOff" name="toggle" value="<TMPL_VAR NAME="Localize_ChangeToNo"> <TMPL_VAR NAME="Localize_Security_StealthMode">" />
+                <input type="hidden" name="xmlrpc_local" value="2" />
+
+                </TMPL_IF>
+
+            </form>
