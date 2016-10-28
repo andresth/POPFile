@@ -3049,7 +3049,7 @@ sub classify_and_modify
             if ( $self->config_( 'subject_mod_pos' ) > 0 ) {
                 # Beginning
                 $msg_subject = " $modification$msg_subject";
-            } else {
+            } elsif ( $self->config_( 'subject_mod_pos' ) < 0 ) {
                 # End
                 $msg_subject = "$msg_subject $modification";
             }
