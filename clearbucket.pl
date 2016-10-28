@@ -1,8 +1,7 @@
 #!/usr/bin/perl
 # ----------------------------------------------------------------------------
 #
-# pipe.pl --- Read a message in on STDIN and write out the modified
-# version on STDOUT
+# clearbucket.pl --- Clears the data of a bucket
 #
 # Copyright (c) 2001-2011 John Graham-Cumming
 #
@@ -28,9 +27,9 @@ use local::lib;
 use lib defined($ENV{POPFILE_ROOT})?$ENV{POPFILE_ROOT}:'./';
 use POPFile::Loader;
 
-# main
+my $code = 0;
 
-if ( $#ARGV == -1 ) {
+if ( $#ARGV == 0 ) {
 
     # POPFile is actually loaded by the POPFile::Loader object which does all
     # the work
@@ -47,31 +46,34 @@ if ( $#ARGV == -1 ) {
     $POPFile->CORE_link_components();
     $POPFile->CORE_initialize();
 
-    # Ugly hack which is needed because Bayes::classify_and_modify looks up
-    # the UI port and whether we are allowing remote connections or not
-    # to set the XPL link in the header.  If we don't have these predefined
-    # then they'll be discarded when the configuration is loaded, and since
-    # we are not loading the UI, they are not defined at this point
+    my $bucket = shift @ARGV;
 
-    my $c = $POPFile->get_module('POPFile::Config');
-    $c->module_config_( 'html', 'local', 1 );
-    $c->module_config_( 'html', 'port',  0 );
+    @ARGV = ();
 
     if ( $POPFile->CORE_config() ) {
 
         # Prevent the tool from finding another copy of POPFile running
 
+        my $c = $POPFile->get_module( 'POPFile::Config' );
         my $current_piddir = $c->config_( 'piddir' );
-        $c->config_( 'piddir', $c->config_( 'piddir' ) . 'pipe.pl.' );
-
-        $c->parameter('bayes_subject_mod_pos', 0);
+        $c->config_( 'piddir', $c->config_( 'piddir' ) . 'insert.pl.' );
 
         $POPFile->CORE_start();
 
-        my $b = $POPFile->get_module('Classifier::Bayes');
+        my $b = $POPFile->get_module( 'Classifier::Bayes' );
         my $session = $b->get_session_key( 'admin', '' );
 
-        $b->classify_and_modify( $session, \*STDIN, \*STDOUT, 1, '', 0, 1, "\n" );
+        if ( !$b->is_bucket( $session, $bucket ) ) {
+          print STDERR "Error: Bucket `$bucket' does not exist.\n";
+          $code = 1;
+        } else {
+          if ( !$b->clear_bucket( $session, $bucket ) ) {
+            print STDERR "Error: Bucket `$bucket' was not cleared.\n";
+            $code = 1;
+          } else {
+            print "Bucket `$bucket' was cleared.\n";
+          }
+        }
 
         $c->config_( 'piddir', $current_piddir );
 
@@ -82,11 +84,12 @@ if ( $#ARGV == -1 ) {
         $b->release_session_key( $session );
         $POPFile->CORE_stop();
     }
-
-    exit 0;
 } else {
-    print "pipe.pl - reads a message on STDIN, classifies it, outputs the modified version on STDOUT\n\n";
-    print "Usage: pipe.pl\n";
-
-    exit 1;
+    print "clearbucket.pl - clears the date of a bucket\n\n";
+    print "Usage: clearbucket.pl <bucket> <messages>\n";
+    print "       <bucket>           The name of the bucket\n";
+    $code = 1;
 }
+
+exit $code;
+
