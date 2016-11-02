@@ -91,37 +91,38 @@ Dadurch werden jede Stunde die bereits vorhandenen Nachrichten durchsucht, um de
 # Service Skripte
 Es gibt eine Reihe von Skripten mit denen sich POPFile warten lässt.
 * clearbucket.pl
-  > Leert den Inhalt einer Dokumentenklasse.
-  > ```bash
-  > perl ./clearbucket.pl Klasse
-  > ```
-* createbucket.pl
-  > Erzeugt eine neue leere Dokumentenklasse.
-  > ```bash
-  > perl ./createbucket.pl Klasse
-  > ```
-* deletebucket.pl
-  > Löscht die komplette Dokumentenklasse.
-  > ```bash
-  > perl ./deletebucket.pl Klasse
-  > ```
-* getbuckets.pl
-  > Gibt eine Liste der verfügbaren Dokumentenklassen aus.
-* insert.pl
-  > Trainiert eine Dokumentenklasse anhand von Dateien. (z.B. um eine Klasse gezielt anzulernen)
-  > ```bash
-  > perl ./insert.pl Klasse Dateien
-  > ```
-* remove.pl
-  > Entfernt Dateien aus einer Dokumentenklasse.
-  > ```bash
-  > perl ./remove.pl Klasse Dateien
-  > ```
-* isbucket.pl
-  > Prüft ob eine Dokumentenklasse existiert.
-  > ```bash
-  > perl ./isbucket.pl Klasse
-  > ```
+> Leert den Inhalt einer Dokumentenklasse.
+```bash
+perl ./clearbucket.pl Klasse
+```
+
+* createbucket.pl  
+  Erzeugt eine neue leere Dokumentenklasse.
+```bash
+perl ./createbucket.pl Klasse
+```
+* deletebucket.pl  
+  Löscht die komplette Dokumentenklasse.
+```bash
+perl ./deletebucket.pl Klasse
+```
+* getbuckets.pl  
+  Gibt eine Liste der verfügbaren Dokumentenklassen aus.
+* insert.pl  
+  Trainiert eine Dokumentenklasse anhand von Dateien. (z.B. um eine Klasse gezielt anzulernen)
+```bash
+perl ./insert.pl Klasse Dateien
+```
+* remove.pl  
+  Entfernt Dateien aus einer Dokumentenklasse.
+```bash
+perl ./remove.pl Klasse Dateien
+```
+* isbucket.pl  
+  Prüft ob eine Dokumentenklasse existiert.
+```bash
+perl ./isbucket.pl Klasse
+```
 
 # TODO
 * Unterstützung mehrerer E-Mail Konten
