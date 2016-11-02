@@ -90,12 +90,11 @@ Dadurch werden jede Stunde die bereits vorhandenen Nachrichten durchsucht, um de
 
 # Service Skripte
 Es gibt eine Reihe von Skripten mit denen sich POPFile warten lässt.
-* clearbucket.pl
-> Leert den Inhalt einer Dokumentenklasse.
+* clearbucket.pl  
+  Leert den Inhalt einer Dokumentenklasse.
 ```bash
 perl ./clearbucket.pl Klasse
 ```
-
 * createbucket.pl  
   Erzeugt eine neue leere Dokumentenklasse.
 ```bash
