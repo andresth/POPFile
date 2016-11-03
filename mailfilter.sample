@@ -1,0 +1,54 @@
+# set default Maildir
+MAILDIR="$HOME/Maildir"
+
+# check if we're called from a .qmail-EXT instead of .qmail
+import EXT
+if ( $EXT )
+{
+  # does a vmailmgr user named $EXT exist?
+  # if yes, deliver mail to his Maildir instead
+  CHECKMAILDIR = `dumpvuser $EXT | grep '^Directory' | awk '{ print $2 }'`
+  if ( $CHECKMAILDIR )
+  {
+    MAILDIR="$HOME/$CHECKMAILDIR"
+  }
+}
+
+# Spamfilter
+# Ordnerstruktur für Spamfilter
+`test -d "$MAILDIR/.0 Spamfilter" || maildirmake "$MAILDIR/.0 Spamfilter"`
+# `test -d "$MAILDIR/.0 Spamfilter.als Spam erkannt" || maildirmake "$MAILDIR/.0 Spamfilter.als Spam erkannt"`
+`test -d "$MAILDIR/.0 Spamfilter.als Spam lernen" || maildirmake "$MAILDIR/.0 Spamfilter.als Spam lernen"`
+`test -d "$MAILDIR/.0 Spamfilter.als Ham lernen" || maildirmake "$MAILDIR/.0 Spamfilter.als Ham lernen"`
+
+# DSPAM
+xfilter "/package/host/localhost/dspam/bin/dspam --mode=teft --deliver=innocent,spam --stdout"
+
+# Spamassassin
+xfilter "/usr/bin/spamc"
+
+# Spam ausfiltern
+if ( (/^X-DSPAM-Result: Spam/) || (/^X-Spam-Flag: YES/:h) || (/^X-Spam-Status: Yes/:h) )
+{
+  # in den Spamordner und beenden
+  to "$MAILDIR/.Spam"
+}
+
+# POPFile
+xfilter "cd /home/lysip/opt/popfile && /usr/bin/perl pipe.pl 2> /home/lysip/popfile.err"
+
+DestDir = $MAILDIR
+
+/^X-Text-Classification: (.*)$/:h
+if ($MATCH1)
+{
+  DestDir = `/usr/bin/perl /home/lysip/opt/popfile/find-maildir.pl "$MAILDIR" "$MATCH1"`
+  if ($DestDir eq "")
+  {
+    DestDir = $MAILDIR
+  }
+}
+
+
+# Standardregel
+to "$DestDir"
